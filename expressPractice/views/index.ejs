@@ -1,0 +1,35 @@
+<html>
+<body>
+   <header>Employee management System</header>
+   
+   <form action="/displayDetails" method="get">
+  <button type="submit" name="btn" id="btn" value="btn">Add new Employee</button>
+    <table border="2px">
+        <thead>
+            <tr>
+                <th>EmployeeId</th>
+                <th>name </th>
+                <th>salary</th>
+                <th>action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <%for(var i=0;i<empdata.length;i++)
+            {%>
+                <tr>
+                    <td><%=empdata[i].empid%></td>
+                    <td><%=empdata[i].ename%></td>
+                    <td><%=empdata[i].sal%></td>
+                    <td>
+                        <a href="/edit/<%=empdata[i].empid%>">edit</a>/
+                        <a href="/delete/<%=empdata[i].empid%>">delete</a>
+
+                    </td>
+                </tr>
+            <%}%>
+        </tbody>
+    </table>
+   </form>
+
+</body>
+</html>
